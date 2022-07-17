@@ -14,5 +14,6 @@
     },
     "globals": {
             "_": "readonly"
-        }
+        },
+    "no-unused-expressions": ["error", {"allowTaggedTemplates": true}]
 }
