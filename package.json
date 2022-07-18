@@ -2,9 +2,10 @@
   "name": "xp-my-investments",
   "version": "1.0.0",
   "description": "Node package for development MyInvestments app ",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "mocha tests/**/*.js"
+    "test": "mocha tests/**/*.js",
+    "dev": "nodemon start"
   },
   "repository": {
     "type": "git",
