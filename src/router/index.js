@@ -1,5 +1,7 @@
-const conta = require('./conta');
+const account = require('./account');
+const login = require('./login');
 
 module.exports = {
-  conta,
+  account,
+  login
 };
