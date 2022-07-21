@@ -32,5 +32,8 @@ const buyStocksService = async ({investorId, ticker, qttStocksBuy,value}) => {
   return investment;
 };
 
+const sellStocksService = async ( { investorId, ticker, qttStocksSell, value } ) => { 
+  console.log(investorId, ticker, qttStocksSell, value );
+}
 
-module.exports = buyStocksService;
+module.exports = {buyStocksService, sellStocksService};
