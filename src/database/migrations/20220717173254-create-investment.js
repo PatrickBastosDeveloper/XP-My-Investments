@@ -11,7 +11,6 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        primaryKey: true,
       },
       stockId: {
         type: Sequelize.INTEGER,
@@ -22,10 +21,10 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        primaryKey: true,
       },
-      qtt_investor_stock: {
+      qttInvestorStock: {
         type: Sequelize.INTEGER,
+        field: 'qtt_investor_stock'
       },
     });
   },

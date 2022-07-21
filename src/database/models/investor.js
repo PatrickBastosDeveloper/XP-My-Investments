@@ -4,19 +4,19 @@ module.exports = (sequelize, DataTypes) => {
   const InvestorTable = sequelize.define(
     'Investor',
     {
-      investor_id: {
+      investorId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
       },
-      investor_name: DataTypes.STRING,
-      account_balance: DataTypes.DECIMAL,
+      investorName: DataTypes.STRING,
+      accountBalance: DataTypes.DECIMAL,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
     },
     {
+      underscored: true,
       timestamps: false,
       tableName: 'Investors',
-      underscored: true,
     }
   );
 

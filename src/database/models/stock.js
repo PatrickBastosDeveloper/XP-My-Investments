@@ -4,14 +4,14 @@ module.exports = (sequelize, DataTypes) => {
   const StocksTable = sequelize.define(
     'Stock',
     {
-      stock_id: {
+      stockId: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      company_name: DataTypes.STRING,
+      companyName: DataTypes.STRING,
       ticker: DataTypes.STRING,
-      qtt_stocks_company: DataTypes.INTEGER,
+      qttStocksCompany: DataTypes.INTEGER,
     },
     {
       timestamps: false,
