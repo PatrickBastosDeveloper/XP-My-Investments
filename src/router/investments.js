@@ -1,8 +1,10 @@
 const express = require( 'express' );
-const buyStocksController = require( '../controllers/investmentsController' );
+const {buyStocksController, sellStocksController} = require( '../controllers/investmentsController' );
+const { validateToken } = require( '../middlewares' );
 
 const route = express.Router();
 
-route.post('/investments/buy', buyStocksController);
+route.post('/investments/buy', validateToken, buyStocksController);
+route.post('/investments/sell',  sellStocksController);
 
 module.exports = route;
