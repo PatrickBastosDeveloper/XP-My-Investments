@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
       },
       investorName: DataTypes.STRING,
-      accountBalance: DataTypes.DECIMAL,
+      accountBalance: DataTypes.INTEGER,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
     },
