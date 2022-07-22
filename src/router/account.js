@@ -6,6 +6,6 @@ const route = express.Router();
 
 route.post('/account/deposit', validateToken, accountDepositController );
 route.post('/account/withdraw', validateToken, withdrawController)
-route.get('/account/:id', getAccountBalanceContoller)
+route.get('/account/:id', validateToken, getAccountBalanceContoller)
 
 module.exports = route;
