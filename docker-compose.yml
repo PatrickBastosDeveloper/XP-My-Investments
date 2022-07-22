@@ -13,12 +13,12 @@ services:
     depends_on:
       - db
     ports:
-      - 3001:3000
+      - 3000:3000
     environment:
       MYSQL_USER: root
       MYSQL_PASSWORD: password
       MYSQL_HOST: db
-      PORT: '3001'
+      PORT: '3000'
       JWT_SECRET: secretJWT
   db:
     container_name: xp_wallet_db

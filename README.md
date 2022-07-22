@@ -1,2 +1,8 @@
 # XP-My-Investments
-Investment app with some digital account features.
+
+__
+
+API desenvolvida para retornar no formato JSON dados de transações de compra e venda de ações, e algumas funcionalidades de conta digital.
+__
+
+Re

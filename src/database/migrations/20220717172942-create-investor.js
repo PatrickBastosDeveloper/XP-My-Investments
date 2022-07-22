@@ -14,8 +14,15 @@ module.exports = {
         field: 'investor_name',
       },
       accountBalance: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.DECIMAL(10, 2),
         field: 'account_balance',
+        allowNull: false,
+        get() {
+          return parseFloat(this.getDataValue('accountBalance'));
+        },
+        dialectOptions: {
+          decimalNumbers: true
+      },
       },
       email: {
         allowNull: false,
