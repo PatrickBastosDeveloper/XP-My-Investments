@@ -49,37 +49,42 @@ const buyStocksService = async ({investorId, ticker, qttStocksBuy,value}) => {
 };
 
 const sellStocksService = async ( { investorId, ticker, qttStocksSell, value } ) => { 
-  // busquei o ticker
   const stocks = await Stock.findOne( { where: { ticker } } );
-  // busquei o id do investidor e da ação
   const StocksSell = await Investment.findOne({
     where: { investorId: investorId, stockId: stocks.stockId,},
   } );
-  // verifiquei se a ação vendida existe na carteira do investidor
+
   if(!StocksSell){
     throw new HttpException(400, 'This stocks not exist.');
   }
-  if(qttStocksSell > StocksSell.qttInvestorStock ) { // verifiquei se a quantidade de ações vendida é maior que a quantidade que tem na carteira.
+  if(qttStocksSell > StocksSell.qttInvestorStock ) { 
     throw new HttpException(400, 'Number of stocks less than available in the wallet.');
   }
-  // Atualizei a quantidade de ações na carteira
+
   await StocksSell.update({
     qttInvestorStock: StocksSell.qttInvestorStock - qttStocksSell
   } );
   await stocks.update( {
     qttStocksCompany: stocks.qttStocksCompany + qttStocksSell
-  })
-  // busquei o investidor
+  } )
+  
   const investor = await Investor.findOne({
     where: { investorId: investorId },
   } );
-  // Descobri o valor adquirido na venda
+
   const valStockSell = qttStocksSell * value;
   await investor.update({
     accountBalance: Number(investor.accountBalance) + valStockSell
   } );
-  //qttstockinvestor = 105 accountBalance = 12000 petrobras=206758
+
   return `You sell ${ qttStocksSell } stocks of ${ ticker } for R$ ${ value }. Your account balance now is r$ ${ investor.accountBalance }`;
 }
 
-module.exports = {buyStocksService, sellStocksService};
+const getInvestmentsServie = async ( id ) => { 
+  const dataInvestments = await Investment.findByPk( id );
+  // const getAll = await Investment.findAll( dataInvestments );
+  
+  return dataInvestments
+}
+
+module.exports = {buyStocksService, sellStocksService, getInvestmentsServie};
