@@ -1,5 +1,5 @@
 const rescue = require('express-rescue');
-const { buyStocksService, sellStocksService } = require( '../services/investmentsService' );
+const { buyStocksService, sellStocksService, getInvestmentsServie } = require( '../services/investmentsService' );
 const getValueStock = require( '../utils/axiosStocks' );
 
 const buyStocksController = rescue(async (req, res) => {
@@ -18,6 +18,11 @@ const sellStocksController = rescue(async (req, res) => {
   res.status(200).json(sell);
 });
 
-
-
-module.exports = { buyStocksController, sellStocksController };
+const getInvestmentsController = rescue( async ( req, res ) => {
+  const { id } = req.params;
+  
+  const investments = await getInvestmentsServie( id );
+  res.status( 200 ).json( investments );
+} );
+  
+module.exports = { buyStocksController, sellStocksController, getInvestmentsController };
