@@ -11,6 +11,12 @@ const app = express();
 app.use(express.json());
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerConfig))
 
+app.use( (request, response, next) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+} );
+
 app.use(cors())
 app.use(stocks);
 app.use(account);
