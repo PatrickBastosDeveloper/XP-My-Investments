@@ -16,6 +16,6 @@ describe('O model de Stock', function () {
   });
 
   describe('possui as propriedades definidas pelo modelo lógico para a entidade Stocks', () => {
-    ['stock_id', 'company_name', 'ticker', 'qtt_stocks_company'].forEach(checkPropertyExists(stock));
+    ['stockId', 'companyName', 'ticker', 'qttStocksCompany'].forEach(checkPropertyExists(stock));
   });
 });
