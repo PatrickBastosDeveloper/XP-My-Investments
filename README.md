@@ -88,6 +88,7 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 * [Nodemon](https://nodemon.io/)
 * [jsonwebtoken](https://jwt.io/)
 * [Axios](https://axios-http.com/ptbr/docs/intro)
+* [cors](https://www.npmjs.com/package/cors)
 * [sequelize-test-helpers](https://www.npmjs.com/package/sequelize-test-helpers)
 * [chai](https://devdocs.io/chai/)
 * [mocha](https://mochajs.org/api/mocha.js.html)
