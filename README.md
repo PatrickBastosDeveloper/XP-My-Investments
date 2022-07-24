@@ -12,13 +12,13 @@
 
 ### Ajustes e melhorias
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+Embora eu tenha atingido os objetivos do case, existem alguns alterações e adições que eu gostaria de criar para prática após a entrevista técnica:
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+- [ ] Segregar e criar algumas entidades para melhorar a normalização. 
+- [ ] Criar uma entidade para registro do histórico das transações de compra e venda de ações.
+- [ ] Criar uma entidade conta para registro do saldo, e histórico de transações bancárias.
+- [ ] Criar uma rota para cadastro de novos investidores.
+- [ ] Enviar um e-mail de confirmação de transação.
 
 ## 🚀 Começando
 
@@ -66,10 +66,11 @@ Dar exemplos
 
 ### ⌨️ E testes de estilo de codificação
 
-Explique que eles verificam esses testes e porquê.
+Foi utilizada a lib eslint para seguir o padrão de regras e identação.
+É possível verificar rodando o comando:
 
 ```
-Dar exemplos
+npm run lint
 ```
 
 ## 📦 Desenvolvimento
@@ -78,15 +79,24 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
+* [JavaScript](https://devdocs.io/javascript/)
+* [Node](https://nodejs.org/en/docs/)
+* [Sequelize](https://sequelize.org/)
+* [MySQL](https://dev.mysql.com/doc/)
+* [Postegres](https://www.postgresql.org/docs/)
+* [Docker](https://docs.docker.com/)
+* [Nodemon](https://nodemon.io/)
+* [jsonwebtoken](https://jwt.io/)
+* [Axios](https://axios-http.com/ptbr/docs/intro)
+* [sequelize-test-helpers](https://www.npmjs.com/package/sequelize-test-helpers)
+* [chai](https://devdocs.io/chai/)
+* [mocha](https://mochajs.org/api/mocha.js.html)
+* [jest](https://jestjs.io/pt-BR/docs/getting-started)
+* [eslint](https://eslint.org/docs/latest/user-guide/configuring/)
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O framework web usado
-* [Maven](https://maven.apache.org/) - Gerente de Dependência
-* [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
+## 🖇️ Contribuindo para <XP-My-Investments>
 
-## 🖇️ Contribuindo para <nome_do_projeto>
-
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+Para contribuir com <XP-My-Investments>, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
@@ -96,22 +106,21 @@ Para contribuir com <nome_do_projeto>, siga estas etapas:
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+
 ## 📌 Versão
 
-Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
+1.0
 
-## ✒️ Autores
 
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
+## ✒️ Autor
 
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/linkParaPerfil)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
+* [Patrick Bastos](https://github.com/PatrickBastosDeveloper)
 
-Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
 
 ## 📄 Licença
 
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## 🎁 Expressões de gratidão
 
