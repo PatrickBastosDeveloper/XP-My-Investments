@@ -1,5 +1,5 @@
-const loginRouteDoc = require('../router/login.doc');
-const stocksRouteDoc = require('../router/stocks.doc');
+const loginRouteDoc = require('./components/login.doc');
+const stocksRouteDoc = require('./components/stocks.doc');
 
 const swaggerConfig = {
   openapi: '3.0.0',
@@ -40,6 +40,10 @@ const swaggerConfig = {
     {
       name: 'Stocks',
       description: 'Rota de informações sobre as ações e empresas',
+    },
+    {
+      name: 'Account',
+      description: 'Rota de informações da conta corrente do usuário',
     },
   ],
   paths: { ...loginRouteDoc, ...stocksRouteDoc },
