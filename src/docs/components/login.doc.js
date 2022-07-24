@@ -1,8 +1,8 @@
 const getToken = {
   tags: ['Login'],
-  summary: 'Login para gerar o token de acesso à  carteira e conta do usuário',
+  summary: 'Login para acesso do cliente',
   description:
-    'Login para gerar o token de acesso à  carteira e conta do usuário',
+    'Ao logar, é gerado um token para acesso à  carteira e conta do cliente. Para acesso as rotas investments e account é necessário passar o token gerado nesta rota no campo superior direito "Authorize".',
   requestBody: {
     content: {
       'application/json': {

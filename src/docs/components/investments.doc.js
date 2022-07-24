@@ -1,7 +1,7 @@
 const buyStocks = {
   tags: ['Investments'],
   summary: 'Rota para compra de ações.',
-  description: 'Rota para compra de ações',
+  description: 'Nesta rota o cliente pode comprar ações',
   requestBody: {
     content: {
       'application/json': {
@@ -28,6 +28,11 @@ const buyStocks = {
       },
     },
   },
+  security: [
+    {
+      bearerAuth: [],
+    },
+  ],
   responses: {
     200: {
       description: 'OK',
@@ -50,7 +55,7 @@ const buyStocks = {
 const sellStocks = {
   tags: ['Investments'],
   summary: 'Rota para venda de ações.',
-  description: 'Rota para venda de ações.',
+  description: 'Nesta rota o cliente pode vender suas ações.',
   requestBody: {
     content: {
       'application/json': {
@@ -77,6 +82,11 @@ const sellStocks = {
       },
     },
   },
+  security: [
+    {
+      bearerAuth: [],
+    },
+  ],
   responses: {
     200: {
       description: 'OK',

@@ -1,7 +1,7 @@
 const makingDeposit = {
   tags: ['Account'],
-  summary: 'Rota para depósitos na conta corrente do usuário',
-  description: 'Rota para depósitos na conta corrente do usuário',
+  summary: 'Rota para depósitos na conta corrente do cliente',
+  description: 'Nesta rota, é possível que o cliente realize depósitos em sua conta corrente.',
   requestBody: {
     content: {
       'application/json': {
@@ -16,28 +16,13 @@ const makingDeposit = {
             value: {
               type: 'number',
               description: 'Valor a ser depositado',
-              example: 100.00,
+              example: 100.0,
             },
           },
         },
       },
     },
   },
-  // requestHeader: {
-  //   content: {
-  //     'application/json': {
-  //       schema: {
-  //         type: 'string',
-  //         properties: {
-  //           token: {
-  //             type: 'string',
-  //             description: 'Tocken de validação para acesso aos dados do endpoint.',
-  //           },
-  //         },
-  //       },
-  //     },
-  //   },
-  // },
   security: [
     {
       bearerAuth: [],
@@ -61,8 +46,8 @@ const makingDeposit = {
 
 const makingWithdraw = {
   tags: ['Account'],
-  summary: 'Rota para saque da conta corrente do usuário',
-  description: 'Rota para saque da conta corrente do usuário',
+  summary: 'Rota para saque da conta corrente do cliente',
+  description: 'Nesta rota, é possível que o cliente realize saques de sua conta corrente.',
   requestBody: {
     content: {
       'application/json': {
@@ -84,6 +69,11 @@ const makingWithdraw = {
       },
     },
   },
+  security: [
+    {
+      bearerAuth: [],
+    },
+  ],
   responses: {
     200: {
       description: 'OK',
@@ -91,7 +81,8 @@ const makingWithdraw = {
         'application/json': {
           schema: {
             type: 'object',
-            example: 'You made a withdrawal of 100. Your balance now is R$ 12230 ',
+            example:
+              'You made a withdrawal of 100. Your balance now is R$ 12230 ',
           },
         },
       },
@@ -102,34 +93,21 @@ const makingWithdraw = {
 const getAccountBalance = {
   tags: ['Account'],
   summary: 'Rota para consulta de saldo do cliente.',
-  description:
-    'Rota para consulta de saldo do cliente',
-  requestBody: {
-    content: {
-      'application/json': {
-        schema: {
-          type: 'object',
-          properties: {
-            investorId: {
-              type: 'number',
-              description: 'Id do usuário',
-              example: 3,
-            },
-            investorName: {
-              type: 'string',
-              description: 'Nome do usuário',
-              example: 'Arthur Pires',
-            },
-            accountBalance: {
-              type: 'number',
-              description: 'Saldo em conta do usuário',
-              example: '5540.00',
-            },
-          },
-        },
-      },
+  description: 'Nesta rota o cliente pode acompanhar o saldo de sua conta corrente.',
+  parameters: [
+    {
+      name: 'id',
+      in: 'path',
+      description: 'id do usuário',
+      type: 'string',
+      example: 3,
     },
-  },
+  ],
+  security: [
+    {
+      bearerAuth: [],
+    },
+  ],
   responses: {
     200: {
       description: 'OK',
@@ -137,18 +115,17 @@ const getAccountBalance = {
         'application/json': {
           schema: {
             type: 'object',
-            example:
-            {
-              "investorId": 3,
-              "investorName": "Arthur Pires",
-              "accountBalance": 5540.00
+            example: {
+              'investorId': 3,
+              'investorName': 'Arthur Pires',
+              'accountBalance': 5540.0,
             },
           },
         },
       },
     },
   },
-}
+};
 
 const accountRouteDoc = {
   '/account/deposit': {
@@ -157,8 +134,8 @@ const accountRouteDoc = {
   '/account/withdraw': {
     post: makingWithdraw,
   },
-  '/account/:id': {
-    post: getAccountBalance,
+  '/account/{id}': {
+    get: getAccountBalance,
   },
 };
 

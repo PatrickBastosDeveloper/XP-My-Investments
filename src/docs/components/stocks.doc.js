@@ -10,8 +10,8 @@ const stocks = [
 
 const listDataCompanys = {
   tags: [ 'Stocks' ],
-  summary: 'Lista com todas as empresas cadastradas e seus ativos',
-  description: 'Lista com todas as empresas cadastradas e seus ativos',
+  summary: 'Lista todas as empresas cadastradas e seus ativos',
+  description: 'Lista todas as empresas cadastradas e seus ativos',
   responses: {
     200: {
       description: 'OK',
@@ -38,7 +38,7 @@ const listDataCompanys = {
 const dataCompanys = {
   tags: ['Stocks'],
   summary: 'Busca as informações dos ativos de uma empresa em específico',
-  description: 'Busca as informações dos ativos de uma empresa em específico',
+  description: 'Busca as informações dos ativos de uma empresa ao informar o ticker dela como parametro na URL.',
   parameters: [
     {
       name: 'ticker',
