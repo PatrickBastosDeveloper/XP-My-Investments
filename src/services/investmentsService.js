@@ -81,10 +81,14 @@ const sellStocksService = async ( { investorId, ticker, qttStocksSell, value } )
 }
 
 const getInvestmentsServie = async ( id ) => { 
-  const dataInvestments = await Investment.findByPk( id );
-  // const getAll = await Investment.findAll( dataInvestments );
+  const dataInvestor = await Stock.findByPk( id, {
+    include: [
+      { model: Investor, as: 'investors' },
+      {model: Stock, as: 'stocks'}
+    ]
+  } );
   
-  return dataInvestments
+  return dataInvestor
 }
 
 module.exports = {buyStocksService, sellStocksService, getInvestmentsServie};
