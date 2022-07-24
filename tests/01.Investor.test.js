@@ -16,6 +16,6 @@ describe('O model de Investor', function () {
   });
 
   describe('possui as propriedades definidas pelo modelo lógico para a entidade Investors', () => {
-    ['investor_id', 'investor_name', 'account_balance', 'email', 'password'].forEach(checkPropertyExists(investor));
+    ['investorId', 'investorName', 'accountBalance', 'email', 'password'].forEach(checkPropertyExists(investor));
   });
 });

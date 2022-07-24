@@ -16,6 +16,6 @@ describe('O model de Investment', function () {
   });
 
   describe('possui as propriedades definidas pelo modelo lógico para a entidade Investment', () => {
-    ['qtt_investor_stock'].forEach(checkPropertyExists(investment));
+    ['qttInvestorStock'].forEach(checkPropertyExists(investment));
   });
 });
