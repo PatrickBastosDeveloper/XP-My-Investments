@@ -17,4 +17,12 @@ const getAllStocksService = async () => {
   return result;
 };
 
-module.exports = { getAllStocksService /* , getByStockService  */ };
+const getByStockService = async ( ticker, value ) => {
+  const stocks = await Stock.findOne( {
+    where: { ticker: ticker },
+    attributes: { exclude: [ 'stockId' ] }
+    })
+
+  return {...stocks.dataValues, value}
+};
+module.exports = { getAllStocksService , getByStockService  };
