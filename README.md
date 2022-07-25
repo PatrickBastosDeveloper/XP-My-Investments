@@ -8,74 +8,79 @@
 
 # XP-My-Investments
 
-> API desenvolvida para retornar no formato JSON dados de transações de compra e venda de ações, e algumas funcionalidades de conta digital.
+> API REST desenvolvida para retornar no formato JSON dados de transações de compra e venda de ações, e algumas funcionalidades de conta digital. 
+
+A arquitetura utlizada para o desenvovimento foi a `MSC`, dessa forma trazendo maior escalabilidade e facilidade de manutenção a aplicação.
+
+Para acesso a conta e realização das trasações, o cliente efetua login com e-mail e senha para que o sistema `JWT` possa autenticar sua credencial na aplicação.
+
+Foram utilizados o `Node.js`, `Express` e `JavaScript`, além do `ORM Sequelize` para realizar as transações com os bancos de dados `MySQL` no ambiente de desenvolvimento, e `PostgresSQL` no de produção.
+
+Outras ferramentas utilizadas foram o `Docker`, para garantir a distribuição, o `Heroku` para deploy e, para documentar, o `Swagger`.
+
+[Clique aqui](https://xp-my-investments.herokuapp.com/swagger/) e confira a documentação no `Swagger`.
+
+
 
 ### Ajustes e melhorias
 
-Embora eu tenha atingido os objetivos do case, existem alguns alterações e adições que eu gostaria de criar para prática após a entrevista técnica:
+Existem alguns alterações e adições que eu gostaria de criar para prática após a entrevista técnica que são:
 
+- [ ] Teste unitários automatizados.
 - [ ] Segregar e criar algumas entidades para melhorar a normalização. 
 - [ ] Criar uma entidade para registro do histórico das transações de compra e venda de ações.
 - [ ] Criar uma entidade conta para registro do saldo, e histórico de transações bancárias.
 - [ ] Criar uma rota para cadastro de novos investidores.
 - [ ] Enviar um e-mail de confirmação de transação.
 
-## 🚀 Começando
+## 🚀 Desenvolvimento
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+📋 Alguns pontos a ressaltar sobre o projeto:
 
-Consulte **Implantação** para saber como implantar o projeto.
+* O uso de `API` para trazer o valor da ação do fechamento do pregão do dia anterior. Queria trazer na minha aplicação a experiência dessa informação o mais próximo da realidade, porém as API's que trazem os valores das ações em tempo real são pagas. Esse é o [Link da API](https://api-cotacao-b3.labdo.it/api/cotacao/cd_acao/B3SA3/10) utilizada e sua [Documentação](https://api-cotacao-b3.labdo.it/)
 
-### 📋 Pré-requisitos
+Obs: Por ser uma API financeira amadora pode ocorrer excesso no tráfego, ocorrendo falha 429 na requisição. Contudo a falha é breve, retornando em poucos segundos.
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+* Separei, na pasta utils, algumas funções que acreditei que desacopladas trariam maior flexibilidade ao código, além de respeitar o DRY. 
 
-```
-Dar exemplos
-```
+Essas são: 
+- Função para consumir a API que traz o valor da ação. Optei pelo `Axios` para consumi-la.
+- Função para tratar os erros de forma personalizada. 
+- Funções para criação e validação do `JWT`.
+
+Os arquivos de rotas, utils e middlewares foram centralizados em index para melhor distribuição da informações.
+
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+Para utilizar o container basta rodar o comando: 
 
-Diga como essa etapa será:
+`docker-compose up -d`
 
-```
-Dar exemplos
-```
+Para criação do DB de desenvolvimento:
 
-E repita:
+`npm db:migrate`
 
-```
-Até finalizar
-```
+Para rodar a aplicação:
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+`npm run dev`
 
+Caso necessário, as `variáveis de ambiente` foram informadas no `.env.example`.
 ## ⚙️ Executando os testes
 
-Explicar como executar os testes automatizados para este sistema.
+Infelizmente, não foi possível a devida realizaçãos dos testes além da model.
 
-### 🔩 Analise os testes de ponta a ponta
+Os testes realizados podem ser rodados com o comando:
 
-Explique que eles verificam esses testes e porquê.
+`npm test`.
 
-```
-Dar exemplos
-```
+### ⌨️ Testes de estilo de codificação
 
-### ⌨️ E testes de estilo de codificação
-
-Foi utilizada a lib eslint para seguir o padrão de regras e identação.
+Foi utilizada a lib eslint para seguir o padrão de regras e indentação.
 É possível verificar rodando o comando:
 
-```
-npm run lint
-```
 
-## 📦 Desenvolvimento
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
+`npm run lint`
 
 ## 🛠️ Construído com
 
@@ -97,7 +102,7 @@ Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 ## 🖇️ Contribuindo para <XP-My-Investments>
 
-Para contribuir com <XP-My-Investments>, siga estas etapas:
+Para contribuir com XP-My-Investments, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
@@ -122,16 +127,11 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
-## 🎁 Expressões de gratidão
-
-* Conte a outras pessoas sobre este projeto 📢
-* Convide alguém da equipe para uma cerveja 🍺 
-* Obrigado publicamente 🤓.
-* etc.
-
-
 ---
 ⌨️ com ❤️ por [Patrick Bastos](https://github.com/PatrickBastosDeveloper) 😊
 
-[⬆ Voltar ao topo](#XP-My-Investments)<br>
+👋🏽 Entre em contato!
+
+[![Twitter Badge](https://img.shields.io/badge/-@PatrickBastosC-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/patrickbastosc)]() 
+[![Linkedin Badge](https://img.shields.io/badge/-PatrickBastosDeveloper-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/patrickbastosdeveloper/)](https://www.linkedin.com/in/patrickbastosdeveloper/)
+[![Gmail Badge](https://img.shields.io/badge/-patrickbastosc@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:patrickbastosc@gmail.com)](https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox)
