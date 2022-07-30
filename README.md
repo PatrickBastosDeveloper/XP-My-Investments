@@ -32,6 +32,8 @@ Existem alguns alterações e adições que eu gostaria de criar para prática a
 - [ ] Criar uma entidade conta para registro do saldo, e histórico de transações bancárias.
 - [ ] Criar uma rota para cadastro de novos investidores.
 - [ ] Enviar um e-mail de confirmação de transação.
+- [ ] Utilizar para criptografar a senha no banco de dados a biblioteca bcryptjs.
+
 
 ## 🚀 Desenvolvimento
 
