@@ -18,7 +18,7 @@ Foram utilizados o `Node.js`, `Express` e `JavaScript`, além do `ORM Sequelize`
 
 Outras ferramentas utilizadas foram o `Docker`, para garantir a distribuição, o `Heroku` para deploy e, para documentar, o `Swagger`.
 
-[Clique aqui](https://xp-my-investments.herokuapp.com/swagger/) e confira a documentação no `Swagger`.
+[Clique aqui](https://xp-my-investments.herokuapp.com/swagger/) e confira a documentação e o resultado final (até aqui) da minha `API` no `Swagger`.
 
 
 
