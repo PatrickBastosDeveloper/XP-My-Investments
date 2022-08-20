@@ -18,7 +18,7 @@ Foram utilizados o `Node.js`, `Express` e `JavaScript`, além do `ORM Sequelize`
 
 Outras ferramentas utilizadas foram o `Docker`, para garantir a distribuição, o `Heroku` para deploy e, para documentar, o `Swagger`.
 
-[Clique aqui](https://xp-my-investments.herokuapp.com/swagger/) e confira a documentação no `Swagger`.
+[Clique aqui](https://xp-my-investments.herokuapp.com/swagger/) e confira a documentação e o resultado final (até aqui) da minha `API` no `Swagger`.
 
 
 
@@ -33,12 +33,15 @@ Existem alguns alterações e adições que eu gostaria de fazer:
 - [ ] Criar uma entidade conta para registro do saldo, e histórico de transações bancárias.
 - [ ] Criar uma rota para cadastro de novos investidores.
 - [ ] Enviar um e-mail de confirmação de transação.
+- [ ] Utilizar para criptografar a senha no banco de dados a lib bcryptjs.
+- [ ] Utilizar a lib http-status-codes.
+
 
 ## 🚀 Desenvolvimento
 
 📋 Alguns pontos a ressaltar sobre o projeto:
 
-* O uso de `API` para trazer o valor da ação do fechamento do pregão do dia anterior. Queria trazer na minha aplicação a experiência dessa informação o mais próximo da realidade, porém as API's que trazem os valores das ações em tempo real são pagas. Esse é o [Link da API](https://api-cotacao-b3.labdo.it/api/cotacao/cd_acao/B3SA3/10) utilizada e sua [Documentação](https://api-cotacao-b3.labdo.it/)
+* O uso de `API externa` para trazer o valor da ação do fechamento do pregão do dia anterior. Queria trazer na minha aplicação a experiência dessa informação o mais próximo da realidade, porém as API's que trazem os valores das ações em tempo real são pagas. Esse é o [Link da API](https://api-cotacao-b3.labdo.it/api/cotacao/cd_acao/B3SA3/10) utilizada e sua [Documentação](https://api-cotacao-b3.labdo.it/)
 
 Obs: Por ser uma API financeira amadora pode ocorrer excesso no tráfego, ocorrendo falha 429 na requisição. Contudo a falha é breve, retornando em poucos segundos.
 
