@@ -26,7 +26,8 @@ Outras ferramentas utilizadas foram o `Docker`, para garantir a distribuição, 
 
 Existem alguns alterações e adições que eu gostaria de criar para prática após a entrevista técnica que são:
 
-- [ ] Teste unitários automatizados.
+- [x] Teste unitários automatizados.
+- [ ] Controle de cobertura de testes com nyc/Istanbul.
 - [ ] Segregar e criar algumas entidades para melhorar a normalização. 
 - [ ] Criar uma entidade para registro do histórico das transações de compra e venda de ações.
 - [ ] Criar uma entidade conta para registro do saldo, e histórico de transações bancárias.
