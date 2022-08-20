@@ -24,9 +24,10 @@ Outras ferramentas utilizadas foram o `Docker`, para garantir a distribuição, 
 
 ### Ajustes e melhorias
 
-Existem alguns alterações e adições que eu gostaria de criar para prática após a entrevista técnica que são:
+Existem alguns alterações e adições que eu gostaria de fazer:
 
 - [ ] Teste unitários automatizados.
+- [x] Controle de cobertura de testes com nyc/Istanbul.
 - [ ] Segregar e criar algumas entidades para melhorar a normalização. 
 - [ ] Criar uma entidade para registro do histórico das transações de compra e venda de ações.
 - [ ] Criar uma entidade conta para registro do saldo, e histórico de transações bancárias.
@@ -50,8 +51,11 @@ Essas são:
 
 Os arquivos de rotas, utils e middlewares foram centralizados em index para melhor distribuição da informações.
 
+<details>
 
-### 🔧 Instalação
+<summary>
+<strong>🔧 Instalação</strong>
+</summary>
 
 Para utilizar o container basta rodar o comando: 
 
@@ -66,11 +70,20 @@ Para rodar a aplicação:
 `npm run dev`
 
 Caso necessário, as `variáveis de ambiente` foram informadas no `.env.example`.
-## ⚙️ Executando os testes
 
-Infelizmente, não foi possível a devida realizaçãos dos testes além da model.
+</details>
 
-Os testes realizados podem ser rodados com o comando:
+<details>
+
+<summary>
+<strong>⚙️ Executando os testes</strong>
+</summary>
+
+### ⌨️ Testes de cobertura
+
+`npm run test:coverage`
+
+### ⌨️ Testes unitários
 
 `npm test`.
 
@@ -79,10 +92,14 @@ Os testes realizados podem ser rodados com o comando:
 Foi utilizada a lib eslint para seguir o padrão de regras e indentação.
 É possível verificar rodando o comando:
 
-
 `npm run lint`
+</details>
 
-## 🛠️ Construído com
+<details>
+
+<summary>
+<strong>🛠️ Construído com</strong>
+</summary>
 
 * [JavaScript](https://devdocs.io/javascript/)
 * [Node](https://nodejs.org/en/docs/)
@@ -100,7 +117,13 @@ Foi utilizada a lib eslint para seguir o padrão de regras e indentação.
 * [jest](https://jestjs.io/pt-BR/docs/getting-started)
 * [eslint](https://eslint.org/docs/latest/user-guide/configuring/)
 
-## 🖇️ Contribuindo para <XP-My-Investments>
+</details>
+
+<details>
+
+<summary>
+<strong>🖇️ Para contribuindo no projeto</strong>
+</summary>
 
 Para contribuir com XP-My-Investments, siga estas etapas:
 
@@ -112,18 +135,18 @@ Para contribuir com XP-My-Investments, siga estas etapas:
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+</details>
 
-## 📌 Versão
+<strong>📌 Versão</strong>
+
 
 1.0
 
-
-## ✒️ Autor
+<strong>✒️ Autor</strong>
 
 * [Patrick Bastos](https://github.com/PatrickBastosDeveloper)
 
-
-## 📄 Licença
+<strong>📄 Licença</strong>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
